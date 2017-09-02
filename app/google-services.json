@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "418594131462",
+    "firebase_url": "https://calculator-21680.firebaseio.com",
+    "project_id": "calculator-21680",
+    "storage_bucket": "calculator-21680.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418594131462:android:419e2d9b899a1c96",
+        "android_client_info": {
+          "package_name": "noh.seung.hwa.calculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418594131462-ips6u1pbaeqs1sfjod6v9aht7upiumvq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "noh.seung.hwa.calculator",
+            "certificate_hash": "c2ff57584b4b2f473b23d6bb721d34b7742635ad"
+          }
+        },
+        {
+          "client_id": "418594131462-j7r3i9kpaob9i1jneqj7g54mt953emt9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDHqC4t5tbRFc8dLalUAgJvwPR2WlPTfq4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418594131462-j7r3i9kpaob9i1jneqj7g54mt953emt9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
