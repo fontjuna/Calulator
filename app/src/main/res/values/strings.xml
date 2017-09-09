@@ -1,4 +1,12 @@
 <resources>
     <string name="app_name">Easy Calculator</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3056892491225323/7475622155</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3056892491225323/9959057529</string>
+    <string name="menu_title_help">Help</string>
+    <string name="invalid_expression">Invalid expression</string>
+    <string name="history">History</string>
+    <string name="result">Result</string>
+    <string name="expression">Expression</string>
+    <string name="help_message">Thank you, have a nice day!</string>
+    <string name="ok">OK</string>
+    <string name="result_error" translatable="false">error</string>
 </resources>

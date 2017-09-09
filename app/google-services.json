@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "418594131462-qurmckqhs8sgfiihpcrmi9g3o3n05doh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "noh.seung.hwa.calculator",
+            "certificate_hash": "bfdd30cc78c1ba3798417a773a98f67616c8cc81"
+          }
+        },
+        {
+          "client_id": "418594131462-3bd2h334kb11t97l9hu9d4hfql5p41ug.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "noh.seung.hwa.calculator",
+            "certificate_hash": "3b17afc4a1c1d1295fdf3b007c96b5d5f3d987f5"
+          }
+        },
+        {
           "client_id": "418594131462-ips6u1pbaeqs1sfjod6v9aht7upiumvq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

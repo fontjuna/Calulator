@@ -62,7 +62,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mInput = "0";
+        mInput = "";
         mPreviuos = "";
         mResult = "";
         mInputTextView = (TextView) view.findViewById(R.id.input_text_view);
@@ -109,28 +109,21 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
                 try {
                     input = mInput.replace("×", "*");
                     input = input.replace("÷", "/");
+                    if (input.isEmpty()) {
+                        input = "0";//mInputTextView.getHint().toString();
+                    }
                     double val = Double.parseDouble(Calculation.Calculate(input));
-                    mResult = (mResult + "\n" + mPreviuos).trim();
-                    mResultTextView.setText(mResult);
-                    mPreviuos = mInput + " = " + df.format(val);
-                    mPreviuosTextView.setText(mPreviuos);
-                    mInput = "0";
-                    mInputTextView.setText(mInput);
+                    displayResults(df.format(val));
                 } catch (Exception e) {
-                    Toast.makeText(getActivity(), "수식에 이상이 있습니다.", Toast.LENGTH_SHORT).show();
-                    mResult = (mResult + "\n" + mPreviuos).trim();
-                    mResultTextView.setText(mResult);
-                    mPreviuos = mInput + " = error";
-                    mPreviuosTextView.setText(mPreviuos);
-                    mInput = "0";
-                    mInputTextView.setText(mInput);
+                    Toast.makeText(getActivity(), R.string.invalid_expression, Toast.LENGTH_SHORT).show();
+                    displayResults(getString(R.string.result_error));
                 }
                 mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
                 break;
             }
             case R.id.button_del: {
                 mInput = mInput.length() > 0 ? mInput.substring(0, mInput.length() - 1) : "";
-                mInput = mInput.isEmpty() ? "0" : mInput;
+                mInput = mInput.isEmpty() ? "" : mInput;
                 mInputTextView.setText(mInput);
                 break;
             }
@@ -139,12 +132,12 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
                 mResultTextView.setText(mResult);
                 mPreviuos = "";
                 mPreviuosTextView.setText(mPreviuos);
-                mInput = "0";
+                mInput = "";
                 mInputTextView.setText(mInput);
                 break;
             }
             case R.id.button_clear: {
-                mInput = "0";
+                mInput = "";
                 mInputTextView.setText(mInput);
                 break;
             }
@@ -159,15 +152,28 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
 //                break;
 //            }
             default: {
-                if (mInput.equals("0")) {
-                    mInput = "";
-                }
+//                if (mInput.equals("0")) {
+//                    mInput = "";
+//                }
                 mInput += ((TextView) view).getText().toString();
                 mInputTextView.setText(mInput);
                 break;
             }
         }
 //        saveCurrentData();
+    }
+
+    private void displayResults(String val) {
+        mResult = mResult + mPreviuos;//.trim();
+        if (!mResult.isEmpty() && mResult.charAt(mResult.length() - 1) != 13) {
+            mResult += "\n";
+        }
+        mResultTextView.setText(mResult);
+        mPreviuos = mInput + " = " + val;
+        mPreviuosTextView.setText(mPreviuos);
+        mInput = "";
+        mInputTextView.setText(mInput);
+        mInputTextView.setHint(val.equals(getString(R.string.result_error)) ? "0" : val);
     }
 
 //    public void scrollToEnd(){
