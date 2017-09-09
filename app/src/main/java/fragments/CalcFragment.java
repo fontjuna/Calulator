@@ -125,6 +125,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
                 mInput = mInput.length() > 0 ? mInput.substring(0, mInput.length() - 1) : "";
                 mInput = mInput.isEmpty() ? "" : mInput;
                 mInputTextView.setText(mInput);
+                mInputTextView.setHint("0");
                 break;
             }
             case R.id.button_ac: {
@@ -134,11 +135,13 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
                 mPreviuosTextView.setText(mPreviuos);
                 mInput = "";
                 mInputTextView.setText(mInput);
+                mInputTextView.setHint(getString(R.string.expression));
                 break;
             }
             case R.id.button_clear: {
                 mInput = "";
                 mInputTextView.setText(mInput);
+                mInputTextView.setHint("0");
                 break;
             }
             case R.id.button_pow: {

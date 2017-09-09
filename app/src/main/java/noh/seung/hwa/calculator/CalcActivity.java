@@ -9,12 +9,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.android.gms.ads.MobileAds;
 
 public class CalcActivity extends AppCompatActivity {
     private static final String TAG = "CalcActivity";
-    private FirebaseAnalytics mFirebaseAnalytics;
+//    private FirebaseAnalytics mFirebaseAnalytics;
     private AdView mAdView;
 
     @Override
@@ -30,11 +31,11 @@ public class CalcActivity extends AppCompatActivity {
 //        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "id_Calculator");
 //        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
 //        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-//
-//        MobileAds.initialize(this, "ca-app-pub-3056892491225323/9959057529");
-//        mAdView = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+
+        MobileAds.initialize(this, "ca-app-pub-3056892491225323/9959057529");
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override
