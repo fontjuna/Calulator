@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.util.regex.Pattern;
 
 import backing.Calculation;
 import noh.seung.hwa.calculator.R;
@@ -103,7 +104,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        String input;
+        String input, oneChar;
         switch (view.getId()) {
             case R.id.button_go: {
                 try {
@@ -149,21 +150,22 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
                 mInputTextView.setText(mInput);
                 break;
             }
-//            case R.id.button_twozero: {
-//                mInput += "00";
-//                mInputTextView.setText(mInput);
-//                break;
-//            }
             default: {
-//                if (mInput.equals("0")) {
-//                    mInput = "";
-//                }
-                mInput += ((TextView) view).getText().toString();
+                oneChar = ((TextView) view).getText().toString();
+                if (mInput.isEmpty() && isOperator(oneChar)) {
+                    if (!mInputTextView.getHint().toString().equals(getString(R.string.expression))) {
+                        mInput = mInputTextView.getHint().toString();
+                    }
+                }
+                mInput += oneChar;
                 mInputTextView.setText(mInput);
                 break;
             }
         }
-//        saveCurrentData();
+    }
+
+    private boolean isOperator(String oneChar) {
+        return Pattern.matches("^[×÷+-]*$", oneChar);
     }
 
     private void displayResults(String val) {
@@ -178,34 +180,4 @@ public class CalcFragment extends Fragment implements View.OnClickListener {
         mInputTextView.setText(mInput);
         mInputTextView.setHint(val.equals(getString(R.string.result_error)) ? "0" : val);
     }
-
-//    public void scrollToEnd(){
-//        mScrollView.post(new Runnable() {
-//            @Override
-//            public void run() {
-//                mScrollView.fullScroll(View.FOCUS_DOWN);
-//            }
-//        });
-//
-//    }
-
-//    private void saveCurrentData() {
-//        SharedPreferences message = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//        SharedPreferences.Editor editor = message.edit();
-//        editor.putString(CALC_INPUT, mInput);
-//        editor.putString(CALC_PREVIUOS, mPreviuos);
-//        editor.putString(CALC_RESULT, mResult);
-//        editor.apply();
-//    }
-//
-//    private void restoreCurrentData() {
-//        SharedPreferences message = PreferenceManager.getDefaultSharedPreferences(getActivity());
-//        mInput = message.getString(CALC_INPUT, "0");
-//        mPreviuos = message.getString(CALC_PREVIUOS, "");
-//        mResult = message.getString(CALC_RESULT, "");
-//        mResultTextView.setText(mResult);
-//        mPreviuosTextView.setText(mPreviuos);
-//        mInputTextView.setText(mInput);
-//    }
-
 }
