@@ -16,7 +16,10 @@ import java.text.DecimalFormat;
 import java.util.regex.Pattern;
 
 import backing.Calculation;
-import noh.seung.hwa.calculator.R;
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
+import noh.seung.hwa.civil.R;
 
 
 /**
@@ -25,10 +28,34 @@ import noh.seung.hwa.calculator.R;
 public class CalcFragment extends Fragment implements View.OnClickListener, View.OnLongClickListener {
 
     public static final String TAG = CalcFragment.class.getSimpleName();
+    @BindView(R.id.length_text)
+    TextView mLengthText;
+    @BindView(R.id.ih_text)
+    TextView mIhText;
+    @BindView(R.id.start_text)
+    TextView mStartText;
+    @BindView(R.id.end_text)
+    TextView mEndText;
+    @BindView(R.id.deep_text)
+    TextView mDeepText;
+    @BindView(R.id.distance_text)
+    TextView mDistanceText;
+    @BindView(R.id.staff_text)
+    TextView mStaffText;
+    @BindView(R.id.level_text)
+    TextView mLevelText;
+    @BindView(R.id.ground_text)
+    TextView mGroundText;
+    @BindView(R.id.result_text_view)
+    TextView mResultTextView;
+    @BindView(R.id.scroll_win)
+    ScrollView mScrollWin;
+    @BindView(R.id.previuos_text_view)
+    TextView mPreviuosTextView;
+    @BindView(R.id.input_text_view)
+    TextView mInputTextView;
+    Unbinder unbinder;
 
-    private TextView mResultTextView;
-    private TextView mPreviuosTextView;
-    private TextView mInputTextView;
     private ScrollView mScrollView;
     private String mInput;
     private String mPreviuos;
@@ -36,6 +63,14 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     private DecimalFormat df = new DecimalFormat("#,##0.######");
     private InputMethodManager imm;
 
+    private static final int CIVIL_DISTANCE = R.id.button_distance;
+    private static final int CIVIL_IH = R.id.button_ih;
+    private static final int CIVIL_DEEP = R.id.button_deep;
+    private static final int CIVIL_START = R.id.button_start;
+    private static final int CIVIL_END = R.id.button_end;
+    private static final int CIVIL_LENGTH = R.id.button_length;
+
+    private int mCurentButton = 0;
 
     public CalcFragment() {
         // Required empty public constructor
@@ -51,7 +86,9 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calc, container, false);
+        View view = inflater.inflate(R.layout.fragment_calc, container, false);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
     }
 
     public void restoreResult() {
@@ -101,13 +138,25 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         view.findViewById(R.id.button_ac).setOnClickListener(this);
         view.findViewById(R.id.button_go).setOnClickListener(this);
 
-        view.findViewById(R.id.button_go).setOnLongClickListener(this);
+        view.findViewById(R.id.button_distance).setOnClickListener(this);
+        view.findViewById(R.id.button_ih).setOnClickListener(this);
+        view.findViewById(R.id.button_deep).setOnClickListener(this);
+        view.findViewById(R.id.button_start).setOnClickListener(this);
+        view.findViewById(R.id.button_end).setOnClickListener(this);
+        view.findViewById(R.id.button_length).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
         String input, oneChar;
-        switch (view.getId()) {
+        int where = view.getId();
+        switch (where) {
+            case CIVIL_DEEP:
+            case CIVIL_DISTANCE:
+            case CIVIL_END:
+            case CIVIL_IH:
+            case CIVIL_LENGTH:
+            case CIVIL_START:
             case R.id.button_go: {
                 try {
                     input = mInput.replace("×", "*");
@@ -116,7 +165,14 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                         input = "0";//mInputTextView.getHint().toString();
                     }
                     double val = Double.parseDouble(Calculation.Calculate(input));
-                    displayResults(df.format(val));
+                    switch (where) {
+                        case R.id.button_go:
+                            displayResults(df.format(val));
+                            break;
+                        default:
+                            civilEntry(where, val);
+                            break;
+                    }
                 } catch (Exception e) {
                     Toast.makeText(getActivity(), R.string.invalid_expression, Toast.LENGTH_SHORT).show();
                     displayResults(getString(R.string.result_error));
@@ -166,6 +222,61 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         }
     }
 
+    private void civilEntry(int where, double val) {
+        switch (where) {
+            case CIVIL_DISTANCE:
+                mDistanceText.setText(String.format("%,.3f",val));
+                break;
+            case CIVIL_IH:
+                mIhText.setText(String.format("%,.3f",val));
+                break;
+            case CIVIL_DEEP:
+                mDeepText.setText(String.format("%,.0f",val));
+                break;
+            case CIVIL_START:
+                mStartText.setText(String.format("%,.3f",val));
+                break;
+            case CIVIL_END:
+                mEndText.setText(String.format("%,.3f",val));
+                break;
+            case CIVIL_LENGTH:
+                mLengthText.setText(String.format("%,.3f",val));
+                break;
+        }
+        mInput = "";
+        mInputTextView.setText(mInput);
+        displayCivil();
+    }
+
+    private void displayCivil() {
+        double hight; // 기계고 - 시점관저고
+        double gradient; //구배
+        double delta; // 거리만큼 레벨차
+        double distance = Double.parseDouble(mDistanceText.getText().toString());
+        double ih = Double.parseDouble(mIhText.getText().toString());
+        double deep = Double.parseDouble(mDeepText.getText().toString());
+        double end = Double.parseDouble(mEndText.getText().toString());
+        double start = Double.parseDouble(mStartText.getText().toString());
+        double length = Double.parseDouble(mLengthText.getText().toString());
+        double staff;
+        double level;
+        double ground;
+
+        try {
+            gradient = (start - end) / length;
+            hight = ih - start;
+            delta = distance * gradient;
+            level = start - delta;
+            ground = level - (deep / 1000);
+            staff = hight + delta + (deep / 1000);
+            mStaffText.setText(String.format("%,.3f", staff));
+            mLevelText.setText(String.format("%,.3f", level));
+            mGroundText.setText(String.format("%,.3f", ground));
+        } catch (Exception e) {
+
+        }
+    }
+
     private boolean isOperator(String oneChar) {
         return Pattern.matches("^[×÷+-]*$", oneChar);
     }
@@ -186,5 +297,11 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     @Override
     public boolean onLongClick(View view) {
         return false;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
     }
 }

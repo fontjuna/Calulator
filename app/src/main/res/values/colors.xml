@@ -12,4 +12,6 @@
 
     <color name="colorBakckground">#e7e9f7</color>
     <color name="colorButtonFace">#cfd8dc</color>
+    <color name="colorButtonText0">#ffffff</color>
+    <color name="colorButtonText1">#b3e5fc</color>
 </resources>

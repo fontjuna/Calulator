@@ -6,7 +6,228 @@
     android:layout_height="match_parent"
     android:background="@color/colorBakckground"
     android:orientation="vertical"
-    tools:context=".CalcActivity">
+    tools:context=".TrenchActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="연\n장"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="기계\n고"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="시점\n관저고"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="종점\n관저고"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="관저고 -\n터파기차"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/length_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/ih_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/start_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/end_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/deep_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_horizontal"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="0 + 거리"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="스타프 값"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="관저고"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilLabelFace"
+            android:gravity="center"
+            android:text="터파기고"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/distance_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#0000ff"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/staff_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="#ff0000"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/level_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+        <TextView
+            android:id="@+id/ground_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/CivilTextFace"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/CivilText"
+            android:textSize="@dimen/civil_text"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/line_horizontal"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,8 +248,7 @@
                 android:layout_margin="4dp"
                 android:gravity="right"
                 android:hint="@string/history"
-                android:textColor="#676c6e"
-                android:textSize="20sp"/>
+                android:textSize="16sp"/>
         </ScrollView>
 
         <ScrollView
@@ -39,12 +259,10 @@
                 android:id="@+id/previuos_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
                 android:background="@color/colorBakckground"
                 android:gravity="right"
                 android:hint="@string/result"
-                android:padding="4dp"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="20sp"/>
         </ScrollView>
 
         <ScrollView
@@ -55,19 +273,18 @@
                 android:id="@+id/input_text_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:background="@color/colorButtonFace"
+                android:background="@color/colorTextFace"
                 android:gravity="right"
                 android:hint="@string/expression"
                 android:padding="4dp"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="20sp"/>
         </ScrollView>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorButtonFace"
+        android:background="@color/colorPrimary"
         android:orientation="vertical"
         android:padding="@dimen/button_padding">
 
@@ -76,18 +293,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_mr"
+                android:id="@+id/button_distance"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="MR"
+                android:text="0 + 거리"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_left"
@@ -151,18 +368,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_mc"
+                android:id="@+id/button_length"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="MC"
+                android:text="연장"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_sqrt"
@@ -226,18 +443,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_madd"
+                android:id="@+id/button_ih"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="M+"
+                android:text="기계고"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_7"
@@ -301,18 +518,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_msubtract"
+                android:id="@+id/button_start"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="M-"
+                android:text="시점관저고"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_4"
@@ -376,18 +593,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_r1"
+                android:id="@+id/button_end"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="R1"
+                android:text="종점관저고"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_1"
@@ -451,18 +668,18 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/button_R2"
+                android:id="@+id/button_deep"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_margin="@dimen/button_margin"
                 android:layout_weight="1"
                 android:background="@color/colorPrimaryDark"
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="R2"
+                android:text="관저고 -\n터파기차"
                 android:textColor="@color/colorButtonText1"
-                android:textSize="@dimen/button_text"/>
+                android:textSize="12sp"/>
 
             <TextView
                 android:id="@+id/button_0"

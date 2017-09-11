@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">簡単な計算機</string>
+    <string name="ok">確認</string>
+    <string name="result">計算結果</string>
+    <string name="menu_title_help">ヘルプ</string>
+    <string name="invalid_expression">間違っ計算式です</string>
+    <string name="history">計算履歴</string>
+    <string name="help_message">おかげで、良い一日されなさい</string>
+    <string name="expression">計算式</string>
+</resources>

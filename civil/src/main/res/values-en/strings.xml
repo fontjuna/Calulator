@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Easy Calculator</string>
+    <string name="expression">Expression</string>
+    <string name="history">History</string>
+    <string name="invalid_expression">Invalid expression</string>
+    <string name="menu_title_help">Help</string>
+    <string name="result">Result</string>
+    <string name="help_message">Thank you, have a nice day!</string>
+    <string name="ok">Confirm</string>
+</resources>

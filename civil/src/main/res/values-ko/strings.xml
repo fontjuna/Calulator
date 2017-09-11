@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">터파기 계산기</string>
+    <string name="expression">계산식</string>
+    <string name="history">계산 이력</string>
+    <string name="invalid_expression">잘 못된 계산식 입니다.</string>
+    <string name="menu_title_help">도움말</string>
+    <string name="result">계산 결과</string>
+    <string name="help_message">감사 합니다. 좋은 하루 되세요!</string>
+    <string name="ok">확인</string>
+</resources>
