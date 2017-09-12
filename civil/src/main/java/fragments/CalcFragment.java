@@ -1,7 +1,9 @@
 package fragments;
 
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -56,21 +58,28 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     TextView mInputTextView;
     Unbinder unbinder;
 
-    private ScrollView mScrollView;
     private String mInput;
     private String mPreviuos;
     private String mResult;
     private DecimalFormat df = new DecimalFormat("#,##0.######");
     private InputMethodManager imm;
 
-    private static final int CIVIL_DISTANCE = R.id.button_distance;
+    private static final int CIVIL_LENGTH = R.id.button_length;
     private static final int CIVIL_IH = R.id.button_ih;
-    private static final int CIVIL_DEEP = R.id.button_deep;
     private static final int CIVIL_START = R.id.button_start;
     private static final int CIVIL_END = R.id.button_end;
-    private static final int CIVIL_LENGTH = R.id.button_length;
+    private static final int CIVIL_DEEP = R.id.button_deep;
+    private static final int CIVIL_DISTANCE = R.id.button_distance;
 
-    private int mCurentButton = 0;
+    private static final String SAVE_LENGTH = "SAVE_LENGTH";
+    private static final String SAVE_IH = "SAVE_IH";
+    private static final String SAVE_START = "SAVE_START";
+    private static final String SAVE_END = "SAVE_END";
+    private static final String SAVE_DEEP = "SAVE_DEEP";
+    private static final String SAVE_DISTANCE = "SAVE_DISTANCE";
+    private static final String SAVE_HISTORY = "SAVE_HISTORY";
+    private static final String SAVE_PREVIUOS = "SAVE_PREVIUOS";
+    private static final String SAVE_INPUT = "SAVE_INPUT";
 
     public CalcFragment() {
         // Required empty public constructor
@@ -91,25 +100,21 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         return view;
     }
 
-    public void restoreResult() {
-//        imm.hideSoftInputFromWindow(mResultTextView.getWindowToken(), 0);
-//        restoreCurrentData();
-    }
-
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        mInput = "";
-        mPreviuos = "";
-        mResult = "";
-        mInputTextView = (TextView) view.findViewById(R.id.input_text_view);
-        mPreviuosTextView = (TextView) view.findViewById(R.id.previuos_text_view);
-        mResultTextView = (TextView) view.findViewById(R.id.result_text_view);
-        mScrollView = (ScrollView) view.findViewById(R.id.scroll_win);
-        mInputTextView.setText(mInput);
-        mPreviuosTextView.setText(mPreviuos);
-        mResultTextView.setText(mResult);
+//        mInput = "";
+//        mPreviuos = "";
+//        mResult = "";
+//        mInputTextView = (TextView) view.findViewById(R.id.input_text_view);
+//        mPreviuosTextView = (TextView) view.findViewById(R.id.previuos_text_view);
+//        mResultTextView = (TextView) view.findViewById(R.id.result_text_view);
+//        mScrollView = (ScrollView) view.findViewById(R.id.scroll_win);
+//        mInputTextView.setText(mInput);
+//        mPreviuosTextView.setText(mPreviuos);
+//        mResultTextView.setText(mResult);
+        restoreCurrentData();
 
         view.findViewById(R.id.button_0).setOnClickListener(this);
         view.findViewById(R.id.button_1).setOnClickListener(this);
@@ -125,7 +130,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
 
         view.findViewById(R.id.button_sqrt).setOnClickListener(this);
         view.findViewById(R.id.button_pow).setOnClickListener(this);
-        view.findViewById(R.id.button_twozero).setOnClickListener(this);
+//        view.findViewById(R.id.button_twozero).setOnClickListener(this);
         view.findViewById(R.id.button_clear).setOnClickListener(this);
         view.findViewById(R.id.button_plus).setOnClickListener(this);
         view.findViewById(R.id.button_minus).setOnClickListener(this);
@@ -144,6 +149,8 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         view.findViewById(R.id.button_start).setOnClickListener(this);
         view.findViewById(R.id.button_end).setOnClickListener(this);
         view.findViewById(R.id.button_length).setOnClickListener(this);
+
+        view.findViewById(R.id.button_reset).setOnLongClickListener(this);
     }
 
     @Override
@@ -151,12 +158,12 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         String input, oneChar;
         int where = view.getId();
         switch (where) {
+            case CIVIL_LENGTH:
+            case CIVIL_IH:
+            case CIVIL_END:
+            case CIVIL_START:
             case CIVIL_DEEP:
             case CIVIL_DISTANCE:
-            case CIVIL_END:
-            case CIVIL_IH:
-            case CIVIL_LENGTH:
-            case CIVIL_START:
             case R.id.button_go: {
                 try {
                     input = mInput.replace("×", "*");
@@ -177,7 +184,8 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                     Toast.makeText(getActivity(), R.string.invalid_expression, Toast.LENGTH_SHORT).show();
                     displayResults(getString(R.string.result_error));
                 }
-                mScrollView.fullScroll(ScrollView.FOCUS_DOWN);
+                saveCurrentData();
+                mScrollWin.fullScroll(ScrollView.FOCUS_DOWN);
                 break;
             }
             case R.id.button_del: {
@@ -225,22 +233,22 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     private void civilEntry(int where, double val) {
         switch (where) {
             case CIVIL_DISTANCE:
-                mDistanceText.setText(String.format("%,.3f",val));
+                mDistanceText.setText(String.format("%,.3f", val));
                 break;
             case CIVIL_IH:
-                mIhText.setText(String.format("%,.3f",val));
+                mIhText.setText(String.format("%,.3f", val));
                 break;
             case CIVIL_DEEP:
-                mDeepText.setText(String.format("%,.0f",val));
+                mDeepText.setText(String.format("%,.0f", val));
                 break;
             case CIVIL_START:
-                mStartText.setText(String.format("%,.3f",val));
+                mStartText.setText(String.format("%,.3f", val));
                 break;
             case CIVIL_END:
-                mEndText.setText(String.format("%,.3f",val));
+                mEndText.setText(String.format("%,.3f", val));
                 break;
             case CIVIL_LENGTH:
-                mLengthText.setText(String.format("%,.3f",val));
+                mLengthText.setText(String.format("%,.3f", val));
                 break;
         }
         mInput = "";
@@ -252,12 +260,12 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         double hight; // 기계고 - 시점관저고
         double gradient; //구배
         double delta; // 거리만큼 레벨차
-        double distance = Double.parseDouble(mDistanceText.getText().toString());
-        double ih = Double.parseDouble(mIhText.getText().toString());
-        double deep = Double.parseDouble(mDeepText.getText().toString());
-        double end = Double.parseDouble(mEndText.getText().toString());
-        double start = Double.parseDouble(mStartText.getText().toString());
-        double length = Double.parseDouble(mLengthText.getText().toString());
+        double distance = Double.parseDouble(mDistanceText.getText().toString().replace(",", ""));
+        double ih = Double.parseDouble(mIhText.getText().toString().replace(",", ""));
+        double deep = Double.parseDouble(mDeepText.getText().toString().replace(",", ""));
+        double end = Double.parseDouble(mEndText.getText().toString().replace(",", ""));
+        double start = Double.parseDouble(mStartText.getText().toString().replace(",", ""));
+        double length = Double.parseDouble(mLengthText.getText().toString().replace(",", ""));
         double staff;
         double level;
         double ground;
@@ -296,12 +304,66 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
 
     @Override
     public boolean onLongClick(View view) {
-        return false;
+        switch (view.getId()) {
+            case R.id.button_reset:
+                clearCivil();
+                break;
+        }
+        return true;
+    }
+
+    private void clearCivil() {
+        mLengthText.setText("0");
+        mIhText.setText("0");
+        mStartText.setText("0");
+        mEndText.setText("0");
+        mDeepText.setText("0");
+        mDistanceText.setText("0");
+        mStaffText.setText("0");
+        mLevelText.setText("0");
+        mGroundText.setText("0");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    public void restoreResult() {
+        imm.hideSoftInputFromWindow(mResultTextView.getWindowToken(), 0);
+        restoreCurrentData();
+    }
+
+    private void saveCurrentData() {
+        SharedPreferences message = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        SharedPreferences.Editor editor = message.edit();
+        editor.putString(SAVE_LENGTH, mLengthText.getText().toString());
+        editor.putString(SAVE_IH, mIhText.getText().toString());
+        editor.putString(SAVE_START, mStartText.getText().toString());
+        editor.putString(SAVE_END, mEndText.getText().toString());
+        editor.putString(SAVE_DEEP, mDeepText.getText().toString());
+        editor.putString(SAVE_DISTANCE, mDistanceText.getText().toString());
+        editor.putString(SAVE_HISTORY, mResultTextView.getText().toString());
+        editor.putString(SAVE_PREVIUOS, mPreviuosTextView.getText().toString());
+        editor.putString(SAVE_INPUT, mInputTextView.getText().toString());
+        editor.apply();
+    }
+
+    private void restoreCurrentData() {
+        SharedPreferences message = PreferenceManager.getDefaultSharedPreferences(getActivity());
+        mResult = message.getString(SAVE_HISTORY, "");
+        mResultTextView.setText(mResult);
+        mPreviuos = message.getString(SAVE_PREVIUOS, "");
+        mPreviuosTextView.setText(mPreviuos);
+        mInput = message.getString(SAVE_INPUT, "");
+        mInputTextView.setText(mResult);
+        mLengthText.setText(message.getString(SAVE_LENGTH, "0"));
+        mIhText.setText(message.getString(SAVE_IH, "0"));
+        mStartText.setText(message.getString(SAVE_START, "0"));
+        mEndText.setText(message.getString(SAVE_END, "0"));
+        mDeepText.setText(message.getString(SAVE_DEEP, "0"));
+        mDistanceText.setText(message.getString(SAVE_DISTANCE, "0"));
+        displayCivil();
     }
 }

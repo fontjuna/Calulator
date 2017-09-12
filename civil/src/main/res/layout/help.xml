@@ -8,10 +8,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorTextFace"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:padding="16dp"
         android:textAllCaps="true"
+        android:textColor="#ffffff"
         android:text="@string/app_name"
         android:textStyle="bold"/>
 
@@ -24,8 +25,7 @@
         <TextView
             android:padding="32sp"
             android:id="@+id/help_text"
-            android:gravity="center"
-            android:layout_gravity="center"
+            android:textColor="@color/colorPrimaryDark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="help"/>
@@ -35,7 +35,8 @@
         android:id="@+id/button_clear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorAccent"
+        android:textColor="#ffffff"
+        android:background="@color/colorPrimary"
         android:gravity="center"
         android:text="@string/ok"/>
 </LinearLayout>

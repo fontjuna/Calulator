@@ -9,29 +9,37 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 public class TrenchActivity extends AppCompatActivity {
     private static final String TAG = "TrenchActivity";
-    //    private FirebaseAnalytics mFirebaseAnalytics;
-//    private AdView mAdView;
+    public static final String INFORMATION = ""
+            + "▣ 터파기\n\n" +
+            "숫자를 입력하고 다음의 설명하는 [버튼]을 누르면 해당 값이 입력됩니다." +
+            "입력값은 수식을 넣어도 계산되어 들어 갑니다.\n[리셋]버튼은 길게 누르면 값을 초기화 시킵니다.\n\n" +
+            "단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.\n\n" +
+            "[연장] : 터파기 연장(시점에서 종점까지의 거리)\n\n" +
+            "[기계고] : 터파기 준비가 끝난 후의 레벨의 기계고\n\n" +
+            "[시점관저고] : 시점의 관저고\n\n" +
+            "[종점관저고] : 종점의 관저고\n\n" +
+            "[관저고 - 터파기차] : (mm) 관종, 관경에 따라 또는 기초에 따라 관저고와 터파기고와의 높이 차가 다름\n\n" +
+            "▣ 위의 내용을 입력 후 [0 + 거리]를 입력하면 나머지 값을 계산해서 보여 줍니다.\n\n" +
+            "[0+거리] : 시점으로 부터 계산할 위치까지의 거리\n\n" +
+            "스타프값 : 계산 위치의 읽을 스타프값\n\n" +
+            "관저고 : 계산 위치의 관저고\n\n" +
+            "터파기고 : 계산 위치의 터파기고\n";
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trench);
 
-//        // Obtain the FirebaseAnalytics instance.
-//        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
-//
-//        Bundle bundle = new Bundle();
-//        bundle.putString(FirebaseAnalytics.Param.ITEM_ID, "id");
-//        bundle.putString(FirebaseAnalytics.Param.ITEM_NAME, "id_Calculator");
-//        bundle.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "image");
-//        mFirebaseAnalytics.logEvent(FirebaseAnalytics.Event.SELECT_CONTENT, bundle);
-
 //        MobileAds.initialize(this, "ca-app-pub-3056892491225323/9959057529");
-//        mAdView = (AdView) findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
+        mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override
@@ -45,7 +53,7 @@ public class TrenchActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         View view = getLayoutInflater().inflate(R.layout.help, null, false);
-        ((TextView) view.findViewById(R.id.help_text)).setText(getString(R.string.help_message));
+        ((TextView) view.findViewById(R.id.help_text)).setText(INFORMATION);//.setText(R.string.help_message);
         builder.setView(view);
         final AlertDialog dialog = builder.create();
         view.findViewById(R.id.button_clear).setOnClickListener(new View.OnClickListener() {
