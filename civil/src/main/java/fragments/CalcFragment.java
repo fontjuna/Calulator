@@ -144,11 +144,12 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         view.findViewById(R.id.button_go).setOnClickListener(this);
 
         view.findViewById(R.id.button_distance).setOnClickListener(this);
-        view.findViewById(R.id.button_ih).setOnClickListener(this);
-        view.findViewById(R.id.button_deep).setOnClickListener(this);
-        view.findViewById(R.id.button_start).setOnClickListener(this);
-        view.findViewById(R.id.button_end).setOnClickListener(this);
-        view.findViewById(R.id.button_length).setOnClickListener(this);
+
+        view.findViewById(R.id.button_length).setOnLongClickListener(this);
+        view.findViewById(R.id.button_ih).setOnLongClickListener(this);
+        view.findViewById(R.id.button_deep).setOnLongClickListener(this);
+        view.findViewById(R.id.button_start).setOnLongClickListener(this);
+        view.findViewById(R.id.button_end).setOnLongClickListener(this);
 
         view.findViewById(R.id.button_reset).setOnLongClickListener(this);
     }
@@ -163,6 +164,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
             case CIVIL_END:
             case CIVIL_START:
             case CIVIL_DEEP:
+                break;
             case CIVIL_DISTANCE:
             case R.id.button_go: {
                 try {
@@ -304,7 +306,29 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
 
     @Override
     public boolean onLongClick(View view) {
-        switch (view.getId()) {
+        String input;
+        int where = view.getId();
+        switch (where) {
+            case CIVIL_LENGTH:
+            case CIVIL_IH:
+            case CIVIL_END:
+            case CIVIL_START:
+            case CIVIL_DEEP:
+                try {
+                    input = mInput.replace("×", "*");
+                    input = input.replace("÷", "/");
+                    if (input.isEmpty()) {
+                        input = "0";//mInputTextView.getHint().toString();
+                    }
+                    double val = Double.parseDouble(Calculation.Calculate(input));
+                    civilEntry(where, val);
+                    break;
+                } catch (Exception e) {
+                }
+                saveCurrentData();
+                break;
+
+//            case CIVIL_DISTANCE:
             case R.id.button_reset:
                 clearCivil();
                 break;

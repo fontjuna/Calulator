@@ -6,6 +6,16 @@
     <string name="invalid_expression">잘 못된 계산식 입니다.</string>
     <string name="menu_title_help">도움말</string>
     <string name="result">계산 결과</string>
-    <string name="help_message">감사 합니다. 좋은 하루 되세요!</string>
+    <string name="help_message">▣ 터파기\n거리 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.\n\n▣ 사용법\n숫자를 입력하고 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.\n입력값은 수식을 넣어도 계산되어 들어 갑니다.\n단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.\n\n[연장] : 터파기 연장(시점에서 종점까지의 거리)\n[기계고] : 터파기 준비가 끝난 후의 레벨의 기계고\n[시점관저고] : 시점의 관저고\n[종점관저고] : 종점의 관저고\n[관저고 - 터파기차] : (mm) 관종, 관경 및 기초에 따른 관저고와 터파기고와의 높이 차\n[리셋] : 터파기 값을 초기화 시킵니다.\n\n▣ 위의 내용을 입력 후 [0 + 거리]를 입력하면 나머지 값을 계산해서 보여 줍니다.\n[0+거리] : 시점으로 부터 계산할 위치까지의 거리\n스타프값 : 계산 위치의 읽을 스타프값\n관저고 : 계산 위치의 관저고\n터파기고 : 계산 위치의 터파기고\n\n▣ 수식 입력 후 [=]을 누르면 계산기 역할입니다.\n예) 34 [기계고] -> 기계고에 34 세팅\n예) 34 + 15 = -> 계산결과 49 출력\n</string>
     <string name="ok">확인</string>
+    <string name="distance">연 장</string>
+    <string name="instrument_height">기계 고</string>
+    <string name="start_of_level">시점 관저고</string>
+    <string name="end_of_level">종점 관저고</string>
+    <string name="different_level">관저고 - 터파기차</string>
+    <string name="distance_from_start">0 + 거리</string>
+    <string name="staff_value">스타프 값</string>
+    <string name="plan_level">관저고</string>
+    <string name="digging_level">터파기고</string>
+    <string name="reset">리셋</string>
 </resources>

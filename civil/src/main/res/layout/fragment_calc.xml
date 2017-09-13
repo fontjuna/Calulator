@@ -20,7 +20,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="연\n장"
+            android:text="@string/distance"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -31,7 +31,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="기계\n고"
+            android:text="@string/instrument_height"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -42,7 +42,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="시점\n관저고"
+            android:text="@string/start_of_level"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -53,7 +53,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="종점\n관저고"
+            android:text="@string/end_of_level"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -64,7 +64,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="관저고 -\n터파기차"
+            android:text="@string/different_level"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -151,7 +151,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="0 + 거리"
+            android:text="@string/distance_from_start"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -162,7 +162,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="스타프 값"
+            android:text="@string/staff_value"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -173,7 +173,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="관저고"
+            android:text="@string/plan_level"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -184,7 +184,7 @@
             android:layout_weight="1"
             android:background="@color/CivilLabelFace"
             android:gravity="center"
-            android:text="터파기고"
+            android:text="@string/digging_level"
             android:textColor="@color/CivilText"
             android:textSize="@dimen/civil_text"/>
 
@@ -320,7 +320,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="연장"
+                android:text="@string/distance"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 
@@ -395,7 +395,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="기계고"
+                android:text="@string/instrument_height"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 
@@ -470,7 +470,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="시점관저고"
+                android:text="@string/start_of_level"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 
@@ -545,7 +545,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="종점관저고"
+                android:text="@string/end_of_level"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 
@@ -620,7 +620,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="관저고 -\n터파기차"
+                android:text="@string/different_level"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 
@@ -695,7 +695,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="0 + 거리"
+                android:text="@string/distance_from_start"
                 android:textColor="#ff0000"
                 android:textSize="12sp"
                 android:textStyle="bold"/>
@@ -710,7 +710,7 @@
                 android:gravity="center"
                 android:padding="@dimen/button_padding"
                 android:soundEffectsEnabled="true"
-                android:text="리셋"
+                android:text="@string/reset"
                 android:textColor="@color/colorButtonText1"
                 android:textSize="12sp"/>
 

@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Easy Calculator</string>
+    <string name="app_name">Excavations Calculator</string>
     <string name="expression">Expression</string>
     <string name="history">History</string>
     <string name="invalid_expression">Invalid expression</string>
     <string name="menu_title_help">Help</string>
     <string name="result">Result</string>
-    <string name="help_message">Thank you, have a nice day!</string>
+    <string name="help_message">▣ Dig the trench\nEntering a distance shows the staff value (level value). Just do it.\n\n▣ How to use\nPress and hold down the button described below to enter the value.\nThe input value is calculated by entering the formula.\nThe units are all meters, but the [train] is a millimeter.\n\n[DIST] : Distance from point to end point\n[IH] : Instrument height\n[SPL] : Planning level of start\n[EPL] : Planning level of end\n[PL-DPL] : (mm) The height difference between Planning level and Digging level.\n[reset] : Initialize the above values\n\n▣ After entering the above information, press the [0 + dist] other values will be calculated automatically.\n[0+dist] : Distance from start point to calculation position\n[staff] : The scale value of the staff at the location to be calculated.\n[PL] : Planning level of the position to be calculated\n[DPL] : Digging level of the position to be calculated\n\n▣ After entering the formula, press [=] to act as a calculator.\nex) 34 [IH] -> Set 34 to instrument height\nex) 34 + 15 [=] -> 49 result display</string>
     <string name="ok">Confirm</string>
+    <string name="reset">reset</string>
+    <string name="instrument_height">IH</string>
+    <string name="end_of_level">EPL</string>
+    <string name="start_of_level">SPL</string>
+    <string name="plan_level">PL</string>
+    <string name="staff_value">staff</string>
+    <string name="distance_from_start">0+dist</string>
+    <string name="distance">DIST</string>
+    <string name="digging_level">DPL</string>
+    <string name="different_level">PL-DPL</string>
 </resources>
