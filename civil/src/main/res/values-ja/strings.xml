@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">床堀り 計算機</string>
+    <string name="ok">確認</string>
+    <string name="result">計算結果</string>
+    <string name="menu_title_help">ヘルプ</string>
+    <string name="invalid_expression">間違っ計算式です</string>
+    <string name="history">計算履歴</string>
+    <string name="expression">計算式</string>
+    <string name="reset">reset</string>
+    <string name="instrument_height">IH</string>
+    <string name="end_of_level">EPL</string>
+    <string name="start_of_level">SPL</string>
+    <string name="plan_level">PL</string>
+    <string name="staff_value">staff</string>
+    <string name="distance_from_start">0+dist</string>
+    <string name="distance">DIST</string>
+    <string name="digging_level">DPL</string>
+    <string name="different_level">PL-DPL</string>
+    <string name="help_message">▣ 管路掘削\n距離を入力すると、STAFF値を示します。そのまま管路掘削します。\n\n▣ 使い方\n数字を入力して次の説明[ボタン]を長押しすると、その値が入力されます。\n入力値は、計算式を入れても計算されていきます。\n単位はすべてmや[管低高 - 掘削高]はmmです。\n\n[DIST] : 掘削延長（始點から終点までの距離）\n[IH] : 掘削準備が終わった後のLEVELの機械高\n[SPL] : 始点の 管低高\n[EPL] : 終点の 管低高\n[PL-DPL] : (mm) 管低高と掘削高の高低差\n[reset] : 掘削高値を初期化します。\n\n▣ 上記の内容を入力し、[0+距離]を入力すると、残りの値を計算して表示します。\n[0+dist] : 始點から計算位置までの距離\n[staff] : 計算位置の読みSTAFF目盛値\n[PL] : 計算位置の 管低高\n[DPL] : 計算位置の 掘削高\n\n▣ 式を入力し、[=]を押すと、計算機の役割です。\n예) 34 [IH] -> 機械高に34セット\n예) 34 + 15 = -> 計算結果49の出力\n</string>
+</resources>

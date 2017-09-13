@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Excavations Calculator</string>
+    <string name="banner_ad_unit_id" translatable="false">ca-app-pub-3056892491225323/8837680993</string>
+    <string name="menu_title_help">Help</string>
+    <string name="invalid_expression">Invalid expression</string>
+    <string name="history">History</string>
+    <string name="result">Result</string>
+    <string name="expression">Expression</string>
+    <string name="ok">OK</string>
+    <string name="result_error" translatable="false">error</string>
+    <string name="reset">reset</string>
+    <string name="instrument_height">IH</string>
+    <string name="end_of_level">EPL</string>
+    <string name="start_of_level">SPL</string>
+    <string name="plan_level">PL</string>
+    <string name="staff_value">staff</string>
+    <string name="distance_from_start">0+dist</string>
+    <string name="distance">DIST</string>
+    <string name="digging_level">DPL</string>
+    <string name="different_level">PL-DPL</string>
+    <string name="help_message">▣ Excavation\nEntering a distance shows the staff value (level value). Just do it.\n\n▣ How to use\\nPress and hold down the button described below to enter the value.\nThe input value is calculated by entering the formula.\nThe units are all meters, but the [train] is a millimeter.\n\n[DIST] : Distance from point to end point\\n[IH] : Instrument height\n[SPL] : Planning level of start (start elevation of invert)\n[EPL] : Planning level of end (end elevation of invert)\n[PL-DPL] : (mm) The height difference between Planning level and Excavation elevation\n[reset] : Initialize the above values\n\n▣ After entering the above information, press the [0 + dist] other values will be calculated automatically.\n[0+dist] : Distance from start point to calculation position\n[staff] : The scale value of the staff at the location to be calculated.\n[PL] : Invert elevation(Planning level) of the position to be calculated\n[DPL] : Excavation elevation of the position to be calculated\n▣ After entering the formula, press [=] to act as a calculator.\nex) 34 [IH] -> Set 34 to instrument height\nex) 34 + 15 [=] -> 49 result display</string>
+</resources>

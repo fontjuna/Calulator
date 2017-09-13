@@ -1,0 +1,78 @@
+﻿▣ 터파기
+거리 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.
+
+
+▣ 사용법
+숫자를 입력하고 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.
+입력값은 수식을 넣어도 계산되어 들어 갑니다.
+단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.
+
+[연장] : 터파기 연장(시점에서 종점까지의 거리)
+[기계고] : 터파기 준비가 끝난 후의 레벨의 기계고
+[시점관저고] : 시점의 관저고
+[종점관저고] : 종점의 관저고
+[관저고 - 터파기차] : (mm) 관종, 관경 및 기초에 따른 관저고와 터파기고와의 높이 차
+[리셋] : 터파기 값을 초기화 시킵니다.
+
+▣ 위의 내용을 입력 후 [0 + 거리]를 입력하면 나머지 값을 계산해서 보여 줍니다.
+[0+거리] : 시점으로 부터 계산할 위치까지의 거리
+스타프값 : 계산 위치의 읽을 스타프값
+관저고 : 계산 위치의 관저고
+터파기고 : 계산 위치의 터파기고
+
+▣ 수식 입력 후 [=]을 누르면 계산기 역할입니다.
+예) 34 [기계고] -> 기계고에 34 세팅
+예) 34 + 15 = -> 계산결과 49 출력
+
+
+▣ Dig the trench
+Entering a distance shows the staff value (level value). Just do it.
+
+▣ How to use
+Press and hold down the button described below to enter the value.
+The input value is calculated by entering the formula.
+The units are all meters, but the [train] is a millimeter.
+
+[DIST] : Distance from point to end point
+[IH] : Instrument height
+[SPL] : Planning level of start point
+[EPL] : Planning level of end point
+[PL - DPL] : (mm) The height difference between Planning level and Digging level.
+[reset] : Initialize the above values
+
+▣ After entering the above information, press the [0 + dist] other values will be calculated automatically.
+[0+dist] : Distance from start point to calculation position
+[staff] : The scale value of the staff at the location to be calculated.
+[PL] : Planning level of the position to be calculated
+[DPL] : Digging level of the position to be calculated
+
+▣ After entering the formula, press [=] to act as a calculator.
+ex) 34 [IH] -> Set 34 to instrument height
+ex) 34 + 15 [=] -> 49 result display
+
+
+▣ 管路掘削
+距離を入力すると、STAFF値を示します。そのまま管路掘削します。
+
+▣ 使い方
+数字を入力して次の説明[ボタン]を長押しすると、その値が入力されます。
+入力値は、計算式を入れても計算されていきます。
+単位はすべてmや[管低高 - 掘削高]はmmです。
+
+[DIST] : 掘削延長（始點から終点までの距離）
+[IH] : 掘削準備が終わった後のLEVELの機械高
+[SPL] : 始点の 管低高
+[EPL] : 終点の 管低高
+[PL-DPL] : (mm) 管低高と掘削高の高低差
+[reset] : 掘削高値を初期化します。
+
+▣ 上記の内容を入力し、[0+距離]を入力すると、残りの値を計算して表示します。
+[0+dist] : 始點から計算位置までの距離
+[staff] : 計算位置の読みSTAFF目盛値
+[PL] : 計算位置の 管低高
+[DPL] : 計算位置の 掘削高
+
+▣ 式を入力し、[=]を押すと、計算機の役割です。
+예) 34 [IH] -> 機械高に34セット
+예) 34 + 15 = -> 計算結果49の出力
+
