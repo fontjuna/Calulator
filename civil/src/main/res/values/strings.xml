@@ -6,7 +6,6 @@
     <string name="history">History</string>
     <string name="result">Result</string>
     <string name="expression">Expression</string>
-    <string name="help_message">▣ 터파기\n거리 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.\n\n▣ 사용법\n숫자를 입력하고 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.\n입력값은 수식을 넣어도 계산되어 들어 갑니다.\n단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.\n\n[연장] : 터파기 연장(시점에서 종점까지의 거리)\n[기계고] : 터파기 준비가 끝난 후의 레벨의 기계고\n[시점관저고] : 시점의 관저고\n[종점관저고] : 종점의 관저고\n[관저고 - 터파기차] : (mm) 관종, 관경 및 기초에 따른 관저고와 터파기고와의 높이 차\n[리셋] : 터파기 값을 초기화 시킵니다.\n\n▣ 위의 내용을 입력 후 [0 + 거리]를 입력하면 나머지 값을 계산해서 보여 줍니다.\n[0+거리] : 시점으로 부터 계산할 위치까지의 거리\n스타프값 : 계산 위치의 읽을 스타프값\n관저고 : 계산 위치의 관저고\n터파기고 : 계산 위치의 터파기고\n\n▣ 수식 입력 후 [=]을 누르면 계산기 역할입니다.\n예) 34 [기계고] -> 기계고에 34 세팅\n예) 34 + 15 = -> 계산결과 49 출력\n</string>
     <string name="ok">OK</string>
     <string name="result_error" translatable="false">error</string>
     <string name="reset">reset</string>
@@ -19,4 +18,5 @@
     <string name="distance">DIST</string>
     <string name="digging_level">DPL</string>
     <string name="different_level">PL-DPL</string>
+    <string name="help_message">▣ Excavation\nEntering a distance shows the staff value (level value). Just do it.\n\n▣ How to use\\nPress and hold down the button described below to enter the value.\nThe input value is calculated by entering the formula.\nThe units are all meters, but the [train] is a millimeter.\n\n[DIST] : Distance from point to end point\\n[IH] : Instrument height\n[SPL] : Planning level of start (start elevation of invert)\n[EPL] : Planning level of end (end elevation of invert)\n[PL-DPL] : (mm) The height difference between Planning level and Excavation elevation\n[reset] : Initialize the above values\n\n▣ After entering the above information, press the [0 + dist] other values will be calculated automatically.\n[0+dist] : Distance from start point to calculation position\n[staff] : The scale value of the staff at the location to be calculated.\n[PL] : Invert elevation(Planning level) of the position to be calculated\n[DPL] : Excavation elevation of the position to be calculated\n▣ After entering the formula, press [=] to act as a calculator.\nex) 34 [IH] -> Set 34 to instrument height\nex) 34 + 15 [=] -> 49 result display</string>
 </resources>

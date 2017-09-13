@@ -6,7 +6,6 @@
     <string name="menu_title_help">ヘルプ</string>
     <string name="invalid_expression">間違っ計算式です</string>
     <string name="history">計算履歴</string>
-    <string name="help_message">▣ 터파기\n거리 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.\n\n\n▣ 사용법\n숫자를 입력하고 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.\n입력값은 수식을 넣어도 계산되어 들어 갑니다.\n단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.\n\n[연장] : 터파기 연장(시점에서 종점까지의 거리)\n[기계고] : 터파기 준비가 끝난 후의 레벨의 기계고\n[시점관저고] : 시점의 관저고\n[종점관저고] : 종점의 관저고\n[관저고 - 터파기차] : (mm) 관종, 관경 및 기초에 따른 관저고와 터파기고와의 높이 차\n[리셋] : 터파기 값을 초기화 시킵니다.\n\n▣ 위의 내용을 입력 후 [0 + 거리]를 입력하면 나머지 값을 계산해서 보여 줍니다.\n[0+거리] : 시점으로 부터 계산할 위치까지의 거리\n스타프값 : 계산 위치의 읽을 스타프값\n관저고 : 계산 위치의 관저고\n터파기고 : 계산 위치의 터파기고\n\n▣ 수식 입력 후 [=]을 누르면 계산기 역할입니다.\n예) 34 [기계고] -> 기계고에 34 세팅\n예) 34 + 15 = -> 계산결과 49 출력\n</string>
     <string name="expression">計算式</string>
     <string name="reset">reset</string>
     <string name="instrument_height">IH</string>
@@ -18,4 +17,5 @@
     <string name="distance">DIST</string>
     <string name="digging_level">DPL</string>
     <string name="different_level">PL-DPL</string>
+    <string name="help_message">▣ 管路掘削\n距離を入力すると、STAFF値を示します。そのまま管路掘削します。\n\n▣ 使い方\n数字を入力して次の説明[ボタン]を長押しすると、その値が入力されます。\n入力値は、計算式を入れても計算されていきます。\n単位はすべてmや[管低高 - 掘削高]はmmです。\n\n[DIST] : 掘削延長（始點から終点までの距離）\n[IH] : 掘削準備が終わった後のLEVELの機械高\n[SPL] : 始点の 管低高\n[EPL] : 終点の 管低高\n[PL-DPL] : (mm) 管低高と掘削高の高低差\n[reset] : 掘削高値を初期化します。\n\n▣ 上記の内容を入力し、[0+距離]を入力すると、残りの値を計算して表示します。\n[0+dist] : 始點から計算位置までの距離\n[staff] : 計算位置の読みSTAFF目盛値\n[PL] : 計算位置の 管低高\n[DPL] : 計算位置の 掘削高\n\n▣ 式を入力し、[=]を押すと、計算機の役割です。\n예) 34 [IH] -> 機械高に34セット\n예) 34 + 15 = -> 計算結果49の出力\n</string>
 </resources>

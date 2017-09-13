@@ -170,6 +170,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 try {
                     input = mInput.replace("×", "*");
                     input = input.replace("÷", "/");
+                    input = input.replace(",", "");
                     if (input.isEmpty()) {
                         input = "0";//mInputTextView.getHint().toString();
                     }
@@ -186,7 +187,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                     Toast.makeText(getActivity(), R.string.invalid_expression, Toast.LENGTH_SHORT).show();
                     displayResults(getString(R.string.result_error));
                 }
-                saveCurrentData();
+//                saveCurrentData();
                 mScrollWin.fullScroll(ScrollView.FOCUS_DOWN);
                 break;
             }
@@ -230,6 +231,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 break;
             }
         }
+        saveCurrentData();
     }
 
     private void civilEntry(int where, double val) {
@@ -317,6 +319,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 try {
                     input = mInput.replace("×", "*");
                     input = input.replace("÷", "/");
+                    input = input.replace(",", "");
                     if (input.isEmpty()) {
                         input = "0";//mInputTextView.getHint().toString();
                     }
@@ -325,7 +328,6 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                     break;
                 } catch (Exception e) {
                 }
-                saveCurrentData();
                 break;
 
 //            case CIVIL_DISTANCE:
@@ -333,6 +335,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 clearCivil();
                 break;
         }
+        saveCurrentData();
         return true;
     }
 
@@ -381,7 +384,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
         mPreviuos = message.getString(SAVE_PREVIUOS, "");
         mPreviuosTextView.setText(mPreviuos);
         mInput = message.getString(SAVE_INPUT, "");
-        mInputTextView.setText(mResult);
+        mInputTextView.setText(mInput);
         mLengthText.setText(message.getString(SAVE_LENGTH, "0"));
         mIhText.setText(message.getString(SAVE_IH, "0"));
         mStartText.setText(message.getString(SAVE_START, "0"));

@@ -112,6 +112,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 try {
                     input = mInput.replace("×", "*");
                     input = input.replace("÷", "/");
+                    input = input.replace(",", "");
                     if (input.isEmpty()) {
                         input = "0";//mInputTextView.getHint().toString();
                     }
