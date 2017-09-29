@@ -1,10 +1,9 @@
 ﻿▣ 터파기
-거리 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.
-
+거리를 입력하면 스타프값을 보여줍니다. 그대로 터파기하면 됩니다.
 
 ▣ 사용법
-숫자를 입력하고 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.
-입력값은 수식을 넣어도 계산되어 들어 갑니다.
+숫자를 입력한 후 다음의 설명하는 [버튼]을 길게 누르면 해당 값이 입력됩니다.
+입력 값은 계산식을 넣으면 계산 되어 들어 갑니다.
 단위는 전부 (m)이나 [관저고-터파기차]는 (mm)입니다.
 
 [연장] : 터파기 연장(시점에서 종점까지의 거리)
@@ -22,30 +21,27 @@
 
 ▣ 수식 입력 후 [=]을 누르면 계산기 역할입니다.
 예) 34 [기계고] -> 기계고에 34 세팅
-예) 34 + 15 = -> 계산결과 49 출력
+예) 34 + 15 [=] -> 계산결과 49 출력
 
 
-▣ Dig the trench
+▣ Excavation
 Entering a distance shows the staff value (level value). Just do it.
 
-▣ How to use
-Press and hold down the button described below to enter the value.
+▣ How to use\nPress and hold down the button described below to enter the value.
 The input value is calculated by entering the formula.
 The units are all meters, but the [train] is a millimeter.
 
-[DIST] : Distance from point to end point
-[IH] : Instrument height
-[SPL] : Planning level of start point
-[EPL] : Planning level of end point
-[PL - DPL] : (mm) The height difference between Planning level and Digging level.
+[DIST] : Distance from point to end point\n[IH] : Instrument height
+[SPL] : Planning level of start (start elevation of invert)
+[EPL] : Planning level of end (end elevation of invert)
+[PL-DPL] : (mm) The height difference between Planning level and Excavation elevation
 [reset] : Initialize the above values
 
 ▣ After entering the above information, press the [0 + dist] other values will be calculated automatically.
 [0+dist] : Distance from start point to calculation position
 [staff] : The scale value of the staff at the location to be calculated.
-[PL] : Planning level of the position to be calculated
-[DPL] : Digging level of the position to be calculated
-
+[PL] : Invert elevation(Planning level) of the position to be calculated
+[DPL] : Excavation elevation of the position to be calculated
 ▣ After entering the formula, press [=] to act as a calculator.
 ex) 34 [IH] -> Set 34 to instrument height
 ex) 34 + 15 [=] -> 49 result display

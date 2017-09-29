@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#79919d</color>
-    <color name="colorPrimaryDark">#607d8b</color>
+    <color name="colorPrimary">@color/blueGray700</color>
+    <color name="colorPrimaryDark">@color/basicBlack</color>
     <color name="colorAccent">#b0bec5</color>
     <color name="colorAccentGrey">#b7b7b7</color>
     <color name="colorAccentBeige">#fff9c4</color>
@@ -12,4 +12,59 @@
 
     <color name="colorBakckground">#e7e9f7</color>
     <color name="colorButtonFace">#cfd8dc</color>
+
+    <color name="basicWhite">#ffffff</color>
+    <color name="basicBlack">#000000</color>
+
+    <color name="C050">#FFEBEE</color>
+    <color name="C100">#FFCDD2</color>
+    <color name="C200">#EF9A9A</color>
+    <color name="C300">#E57373</color>
+    <color name="C400">#EF5350</color>
+    <color name="C500">#F44336</color>
+    <color name="C600">#E53935</color>
+    <color name="C700">#D32F2F</color>
+    <color name="C800">#C62828</color>
+    <color name="C900">#B71C1C</color>
+    <color name="A100">#FF8A80</color>
+    <color name="A200">#FF5252</color>
+    <color name="A400">#FF1744</color>
+    <color name="A700">#D50000</color>
+
+    <color name="red050">#FFEBEE</color>
+    <color name="red100">#FFCDD2</color>
+    <color name="red200">#EF9A9A</color>
+    <color name="red300">#E57373</color>
+    <color name="red400">#EF5350</color>
+    <color name="red500">#F44336</color>
+    <color name="red600">#E53935</color>
+    <color name="red700">#D32F2F</color>
+    <color name="red800">#C62828</color>
+    <color name="red900">#B71C1C</color>
+    <color name="redA100">#FF8A80</color>
+    <color name="redA200">#FF5252</color>
+    <color name="redA400">#FF1744</color>
+    <color name="redA700">#D50000</color>
+
+    <color name="indigo050">#e8eaf6</color>
+    <color name="indigo100">#c5cae9</color>
+    <color name="indigo200">#9fa8da</color>
+    <color name="indigo300">#7986cb</color>
+    <color name="indigo400">#5c6bc0</color>
+    <color name="indigo500">#3f51b5</color>
+    <color name="indigo600">#3949ab</color>
+    <color name="indigo700">#303f9f</color>
+    <color name="indigo800">#283593</color>
+    <color name="indigo900">#1a237e</color>
+
+    <color name="blueGray050">#eceff1</color>
+    <color name="blueGray100">#cfd8dc</color>
+    <color name="blueGray200">#b0bec5</color>
+    <color name="blueGray300">#90a4ae</color>
+    <color name="blueGray400">#78909c</color>
+    <color name="blueGray500">#607d8b</color>
+    <color name="blueGray600">#546e7a</color>
+    <color name="blueGray700">#455a64</color>
+    <color name="blueGray800">#283339</color>
+    <color name="blueGray900">#263238</color>
 </resources>
