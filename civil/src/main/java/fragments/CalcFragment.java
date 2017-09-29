@@ -214,13 +214,17 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
                 mInputTextView.setHint("0");
                 break;
             }
-            case R.id.button_pow: {
-                mInput += "^";
-                mInputTextView.setText(mInput);
-                break;
-            }
+//            case R.id.button_pow: {
+//                mInput += "^";
+//                mInputTextView.setText(mInput);
+//                break;
+//            }
             default: {
-                oneChar = ((TextView) view).getText().toString();
+                if (view.getId() == R.id.button_pow) {
+                    oneChar = "^";
+                } else {
+                    oneChar = ((TextView) view).getText().toString();
+                }
                 if (mInput.isEmpty() && isOperator(oneChar)) {
                     if (!mInputTextView.getHint().toString().equals(getString(R.string.expression))) {
                         mInput = mInputTextView.getHint().toString();
@@ -290,7 +294,7 @@ public class CalcFragment extends Fragment implements View.OnClickListener, View
     }
 
     private boolean isOperator(String oneChar) {
-        return Pattern.matches("^[×÷+-]*$", oneChar);
+        return Pattern.matches("^[×÷+^-]*$", oneChar);
     }
 
     private void displayResults(String val) {

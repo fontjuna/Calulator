@@ -1,31 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">@color/blueGray700</color>
-    <color name="colorPrimaryDark">@color/basicBlack</color>
-    <color name="colorAccent">#b0bec5</color>
-    <color name="colorAccentGrey">#b7b7b7</color>
-    <color name="colorAccentBeige">#fff9c4</color>
-    <color name="colorAccentOrigin">#FF4081</color>
+    <color name="colorPrimary">@color/C700</color>
+    <color name="colorPrimaryDark">@color/C900</color>
+    <color name="colorAccent">@color/A200</color>
 
-    <color name="colorTabFocused">#d6d7d7</color>
-    <color name="colorTabForgot">#fafafa</color>
+    <color name="colorBakckground">@color/C050</color>
+    <color name="colorButtonFace">@color/C200</color>
 
-    <color name="colorBakckground">#e7e9f7</color>
-    <color name="colorButtonFace">#cfd8dc</color>
+    <!--<color name="colorAccentGrey">#b7b7b7</color>-->
+    <!--<color name="colorAccentBeige">#fff9c4</color>-->
+    <!--<color name="colorAccentOrigin">#FF4081</color>-->
+
+    <!--<color name="colorTabFocused">#d6d7d7</color>-->
+    <!--<color name="colorTabForgot">#fafafa</color>-->
 
     <color name="basicWhite">#ffffff</color>
     <color name="basicBlack">#000000</color>
 
-    <color name="C050">#FFEBEE</color>
-    <color name="C100">#FFCDD2</color>
-    <color name="C200">#EF9A9A</color>
-    <color name="C300">#E57373</color>
-    <color name="C400">#EF5350</color>
-    <color name="C500">#F44336</color>
-    <color name="C600">#E53935</color>
-    <color name="C700">#D32F2F</color>
-    <color name="C800">#C62828</color>
-    <color name="C900">#B71C1C</color>
+    <color name="C050">#FAFAFA</color>
+    <color name="C100">#F5F5F5</color>
+    <color name="C200">#EEEEEE</color>
+    <color name="C300">#E0E0E0</color>
+    <color name="C400">#BDBDBD</color>
+    <color name="C500">#9E9E9E</color>
+    <color name="C600">#757575</color>
+    <color name="C700">#616161</color>
+    <color name="C800">#424242</color>
+    <color name="C900">#212121</color>
     <color name="A100">#FF8A80</color>
     <color name="A200">#FF5252</color>
     <color name="A400">#FF1744</color>
