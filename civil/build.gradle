@@ -8,8 +8,8 @@ android {
         applicationId "noh.seung.hwa.civil"
         minSdkVersion 15
         targetSdkVersion 26
-        versionCode 104
-        versionName "1.0.4"
+        versionCode 107
+        versionName "1.0.7"
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
